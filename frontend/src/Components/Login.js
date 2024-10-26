@@ -2,16 +2,47 @@ import React, { useState } from 'react'
 import { FaUser, FaLock } from 'react-icons/fa';
 import { MdEmail } from "react-icons/md";
 import './Login.css'
+import axios from 'axios';
 
 const Login = () => {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [action, setAction] = useState("Sign Up");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Email: ", email);
-        console.log("Password: " , password);
+    const handleLogin = async () => {
+        if (action === "Login") {
+            console.log(email);
+            console.log(password);
+
+            try {
+                const response = await axios.post('http://localhost:5001/api/login', { email, password });
+                console.log(response);
+            } catch (err) {
+                console.error(err);
+            }
+
+        } else {
+            setAction("Login");
+        }
+    }
+
+    const handleSignUp = async () => {
+        if (action === "Sign Up") {
+            console.log(name);
+            console.log(email);
+            console.log(password);
+
+            try {
+                const response = await axios.post('http://localhost:5001/api/register', { email, password });
+                console.log(response);
+            } catch (err) {
+                console.error(err);
+            }
+
+        } else {
+            setAction("Sign Up");
+        }
     }
 
     return (
@@ -24,21 +55,21 @@ const Login = () => {
                 {action === "Login" ? <div></div> : 
                 <div className='input'>
                     <FaUser className='icon' />
-                    <input type='text' placeholder='name' />
+                    <input type='text' placeholder='name' onChange={(e) => setName(e.target.value)}/>
                 </div> }
                 <div className='input'>
                     <MdEmail className='icon' />
-                    <input type='email' placeholder='email' />
+                    <input type='email' placeholder='email' onChange={(e) => setEmail(e.target.value)}/>
                 </div><div className='input'>
                     <FaLock className='icon' />
-                    <input type='password' placeholder='password' />
+                    <input type='password' placeholder='password' onChange={(e) => setPassword(e.target.value)}/>
                 </div>
             </div>
             {action === "Sign Up" ? <div></div> : 
             <div className='forgot-password'>Forgot Password? <span>Click here</span></div> }
             <div className='submit-container'>
-                <div className={action === "Login" ? "submit gray" : "submit"} onClick={() => {setAction("Sign Up")}}>Sign Up</div>
-                <div className={action === "Sign Up" ? "submit gray" : "submit"} onClick={() => {setAction("Login")}}>Login</div>
+                <div className={action === "Login" ? "submit gray" : "submit"} onClick={handleSignUp}>Sign Up</div>
+                <div className={action === "Sign Up" ? "submit gray" : "submit"} onClick={handleLogin}>Login</div>
             </div>
         </div>
     )

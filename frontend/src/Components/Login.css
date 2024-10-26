@@ -56,6 +56,9 @@
     color: #484848;
     font-size: 19px;
 }
+.error-message {
+    color: red;
+}
 .forgot-password {
     padding-left: 62px;
     margin-top: 27px;
