@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FaUser, FaLock } from 'react-icons/fa';
 import { MdEmail } from "react-icons/md";
 import './Login.css'
+import axios from 'axios';
 
 const Login = () => {
     const [name, setName] = useState("");
@@ -9,20 +10,36 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [action, setAction] = useState("Sign Up");
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         if (action === "Login") {
             console.log(email);
             console.log(password);
+
+            try {
+                const response = await axios.post('http://localhost:5001/api/login', { email, password });
+                console.log(response);
+            } catch (err) {
+                console.error(err);
+            }
+
         } else {
             setAction("Login");
         }
     }
 
-    const handleSignUp = () => {
+    const handleSignUp = async () => {
         if (action === "Sign Up") {
             console.log(name);
             console.log(email);
             console.log(password);
+
+            try {
+                const response = await axios.post('http://localhost:5001/api/register', { email, password });
+                console.log(response);
+            } catch (err) {
+                console.error(err);
+            }
+
         } else {
             setAction("Sign Up");
         }
