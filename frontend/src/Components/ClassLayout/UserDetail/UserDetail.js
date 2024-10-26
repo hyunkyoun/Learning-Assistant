@@ -1,9 +1,18 @@
+import React from "react";
 import "./UserDetail.css";
 
-const User = () => {
-    return(
-        <div className ='user'>User</div>
-    )
-}
-
-export default User
+const UserDetail = ({ user }) => {
+    // Handle undefined user gracefully
+    if (!user) {
+      return <div className="user-detail">Detailed information is not available.</div>;
+    }
+  
+    return (
+      <div className="user-detail">
+        <h4>{user.name}</h4>
+        <p>{user.email}</p>
+      </div>
+    );
+  };
+  
+  export default UserDetail;
