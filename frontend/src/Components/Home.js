@@ -10,7 +10,6 @@ function Home() {
             <Navbar />
             <ClassList />
             <Routes>
-                <Route path="/" element={<div>Welcome to the Home Page!</div>} />
                 <Route path="/My Profile"  />
                 <Route path="/Settings" />
                 <Route path="/About Us"/>
