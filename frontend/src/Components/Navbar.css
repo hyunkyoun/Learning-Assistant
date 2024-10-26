@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff; /* Same background as the login container */
+    padding: 1rem 2rem; /* Consistent padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+}
+
+.navbar-brand {
+    font-size: 24px; /* Larger font size for brand */
+    font-weight: 700; /* Bold text */
+    color: lightblue; /* Match login text color */
+}
+
+.navbar-links {
+    display: flex;
+    gap: 2rem; /* Space between links */
+}
+
+.navbar-links a {
+    color: lightblue; /* Match login text color */
+    text-decoration: none;
+    font-size: 18px; /* Similar font size */
+    font-weight: 600; /* Slightly bold */
+    padding: 10px 15px; /* Padding for better spacing */
+    border-radius: 6px; /* Rounded corners */
+    transition: background 0.3s; /* Transition for hover effect */
+}
+
+.navbar-links a:hover {
+    background: rgba(173, 216, 230, 0.2); /* Light hover effect */
+}
+
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: lightblue; /* Match color */
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on your navbar height */
+        left: 0;
+        width: 100%;
+        background: #fff; /* Same as navbar background */
+        padding: 1rem 0; /* Add padding to the dropdown */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for dropdown */
+    }
+
+    .navbar-links.open {
+        display: flex; /* Show links when open */
+    }
+
+    .navbar-links a {
+        padding: 15px; /* Add padding to each link */
+        text-align: center; /* Center-align the text */
+    }
+
+    .navbar-links a:hover {
+        background: rgba(173, 216, 230, 0.2); /* Hover effect */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon */
+    }
+}
