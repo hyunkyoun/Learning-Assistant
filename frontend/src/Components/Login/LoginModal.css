@@ -1,0 +1,60 @@
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal_content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 600px;
+    height: 600px;
+    text-align: center;
+}
+.modal_content h2 {
+    margin-bottom: 1rem;
+}
+.modal_buttons {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.modal_teacher {
+    padding: 20px;
+    margin-right: 10px;
+    width: 250px;
+    height: 420px;
+    box-shadow: 5px 5px 10px gray;
+    border-width: 3px;
+    border-color: gray;
+}
+.modal_teacher:hover {
+    box-shadow: 7px 7px 10px gray;
+}
+.modal_student {
+    padding: 20px;
+    margin-left: 10px;
+    width: 250px;
+    height: 420px;
+    box-shadow: 5px 5px 10px gray;
+    border-width: 3px;
+    border-color: gray;
+}
+.modal_student:hover {
+    box-shadow: 7px 7px 10px gray;
+}
+.modal_image {
+    width: 200px;
+    margin-top: 50px;
+}
+.modal_text {
+    margin-top: 25px;
+}
