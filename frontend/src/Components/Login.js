@@ -3,12 +3,15 @@ import { FaUser, FaLock } from 'react-icons/fa';
 import { MdEmail } from "react-icons/md";
 import './Login.css'
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [action, setAction] = useState("Sign Up");
+
+    const navigate = useNavigate();
 
     const handleLogin = async () => {
         if (action === "Login") {
@@ -21,6 +24,8 @@ const Login = () => {
             } catch (err) {
                 console.error(err);
             }
+
+            navigate("/Home");
 
         } else {
             setAction("Login");
@@ -39,6 +44,9 @@ const Login = () => {
             } catch (err) {
                 console.error(err);
             }
+
+            navigate("/Quiz");
+
 
         } else {
             setAction("Sign Up");

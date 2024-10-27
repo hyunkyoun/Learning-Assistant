@@ -6,7 +6,7 @@ import "./MainLayout.css";
 
 const Main = () => {
     return (
-        <div className = "container">
+        <div className = "main-layout">
             <List/>
             <Discussion/>
             <User/>
