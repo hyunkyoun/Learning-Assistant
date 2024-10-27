@@ -4,12 +4,15 @@ import { MdEmail } from "react-icons/md";
 import './Login.css'
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import LoginModal from './LoginModal';
 
 const Login = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [action, setAction] = useState("Sign Up");
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [role, setRole] = useState("");
 
     const navigate = useNavigate();
 
@@ -34,27 +37,38 @@ const Login = () => {
 
     const handleSignUp = async () => {
         if (action === "Sign Up") {
-            console.log(name);
-            console.log(email);
-            console.log(password);
-
-            try {
-                const response = await axios.post('http://localhost:5001/api/register', { email, password });
-                console.log(response);
-            } catch (err) {
-                console.error(err);
-            }
-
-            navigate("/Quiz");
-
-
+            setIsModalOpen(true);
         } else {
             setAction("Sign Up");
         }
     }
 
+    const handleRoleSelection = async (selectedRole) => {
+        console.log(selectedRole);
+        setRole(selectedRole);
+        setIsModalOpen(false);
+
+        try {
+            const response = await axios.post('http://localhost:5001/api/register', { email, password });
+            console.log(response);
+        } catch (err) {
+            console.error(err);
+        }
+
+        console.log(name);
+        console.log(email);
+        console.log(password);
+        console.log(role);
+
+
+        
+
+    }
+
     return (
         <div className='container'>
+            {isModalOpen && <LoginModal onRoleSelect={handleRoleSelection} />}
+
             <div className='header'>
                 <div className='text'>{action}</div>
                 <div className='underline'></div>
