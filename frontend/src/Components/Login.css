@@ -16,14 +16,14 @@
     margin-top: 30px;
 }
 .text {
-    color: lightblue;
+    color: #2fadfc;
     font-size: 48px;
     font-weight: 700
 }
 .underline {
     width: 61px;
     height: 6px;
-    background: lightblue;
+    background: #2fadfc;
     border-radius: 9px;
 }
 .inputs {
@@ -66,7 +66,7 @@
     font-size: 18px;
 }
 .forgot-password span {
-    color: lightblue;
+    color: #2fadfc;
     cursor: pointer;
 }
 .submit-container {
@@ -81,7 +81,7 @@
     width: 220px;
     height: 59px;
     color: white;
-    background: lightblue;
+    background: #2fadfc;
     border-radius: 50px;
     font-size: 19px;
     font-weight: 700;
