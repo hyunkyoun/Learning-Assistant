@@ -1,79 +1,115 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color: white; /* Set full background to white */
+}
+
+/* Center the wrapper div vertically and horizontally */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Full viewport height */
+    background-color: white; /* Ensures entire background remains white */
+}
+
 .container {
     display: flex;
     flex-direction: column;
-    margin: auto;
-    margin-top: 200px;
     width: 600px;
-    background: #fff;
-    padding-bottom: 30px;
+    padding: 30px;
 }
+
+/* Styling for header */
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 9px;
     width: 100%;
-    margin-top: 30px;
+    margin-bottom: 30px;
 }
+
 .text {
     color: #2fadfc;
     font-size: 48px;
-    font-weight: 700
+    font-weight: 700;
 }
+
 .underline {
     width: 61px;
     height: 6px;
     background: #2fadfc;
     border-radius: 9px;
 }
+
+/* Styling for input fields */
 .inputs {
-    margin-top: 55px;
     display: flex;
     flex-direction: column;
     gap: 25px;
+    margin-bottom: 40px;
 }
+
 .input {
     display: flex;
     align-items: center;
-    margin: auto;
-    width: 480px;
-    height: 80px;
+    width: 100%;
+    height: 60px;
     background: lightgray;
     border-radius: 6px;
+    padding-left: 15px; /* Padding inside the input container */
 }
+
 .icon {
-    margin: 0px 30px;
     font-size: 20px;
     color: gray;
+    margin-right: 10px; /* Space between icon and input text */
 }
+
 .input input {
-    height: 50px;
-    width: 400px;
+    flex: 1;
+    height: 100%;
     background: transparent;
     border: none;
-    outline: none;
     outline: none;
     color: #484848;
     font-size: 19px;
 }
-.error-message {
-    color: red;
-}
+
+/* Styling for forgot-password */
 .forgot-password {
-    padding-left: 62px;
-    margin-top: 27px;
     color: lightgray;
     font-size: 18px;
+    text-align: right;
+    margin-bottom: 20px;
 }
+
 .forgot-password span {
     color: #2fadfc;
     cursor: pointer;
 }
+
+/* Center the submit buttons */
 .submit-container {
     display: flex;
     gap: 30px;
-    margin: 60px auto;
+    justify-content: center; /* Center-aligns the buttons */
 }
+
 .submit {
     display: flex;
     justify-content: center;
@@ -86,8 +122,11 @@
     font-size: 19px;
     font-weight: 700;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-.gray {
+
+.submit.gray {
     background: #eaeaea;
     color: #676767;
+    cursor: not-allowed;
 }
