@@ -20,18 +20,18 @@ const UserSchema = new mongoose.Schema(
       required: true,
       min: 6,
     },
-    profilePicture: {
-      type: String,
-      default: "",
-    },
-    isAdmin: {
-      type: Boolean,
-      default: false,
-    },
-    desc: {
-      type: String,
-      max: 50,
-    },
+    // profilePicture: {
+    //   type: String,
+    //   default: "",
+    // },
+    // isAdmin: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // desc: {
+    //   type: String,
+    //   max: 50,
+    // },
   },
   { timestamps: true }
 );
