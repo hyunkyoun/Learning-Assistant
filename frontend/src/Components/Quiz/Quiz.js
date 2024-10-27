@@ -3,6 +3,7 @@ import './Quiz.css';
 import { questions } from '../../assets/questions';
 import { Chart as ChartJS, LineElement, PointElement, Tooltip, Legend, RadialLinearScale } from 'chart.js';
 import { Radar } from 'react-chartjs-2';
+import { useNavigate } from "react-router-dom";
 
 ChartJS.register(
     LineElement,
@@ -24,6 +25,8 @@ const Quiz = () => {
     let [auditory, setAuditory] = useState(0);
     let [readingwriting, setReadingwriting] = useState(0);
     let [kinesthetic, setKinesthetic] = useState(0);
+
+    const navigate = useNavigate();
 
     const getAnswer = (e, ans) => {
         if (answer !== ans) {
@@ -101,7 +104,11 @@ const Quiz = () => {
         setAuditory(0);
         setReadingwriting(0);
         setKinesthetic(0);
-    }
+    };
+
+    const continueToHome = () => {
+        navigate("/Home");
+    };
 
     return (
         <div className='container'>
@@ -137,7 +144,7 @@ const Quiz = () => {
                     </div>
 
                     <div className='results-button-container'>
-                        <button onClick={next}>Next</button>
+                        <button onClick={continueToHome}>Start</button>
                         <button onClick={reset}>Reset</button>
                     </div>
                 </> 

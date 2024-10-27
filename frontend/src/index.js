@@ -10,9 +10,9 @@ import Main from './Components/ClassLayout/MainLayout/MainLayout';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
+    <App />
     {/* <Login /> */}
-    <Quiz />
+    {/* <Quiz /> */}
   </React.StrictMode>
 );
 
