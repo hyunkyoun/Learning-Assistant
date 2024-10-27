@@ -1,0 +1,51 @@
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.modal_content h2 {
+    margin-bottom: 1rem;
+}
+
+.modal_content form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal_content form button {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal_content form button[type='submit'] {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.modal_content form button[type='button'] {
+    background-color: #f44336; /* Red */
+    color: white;
+}
