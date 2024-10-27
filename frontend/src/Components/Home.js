@@ -13,6 +13,7 @@ function Home() {
                 <Route path="/My Profile"  />
                 <Route path="/Settings" />
                 <Route path="/About Us"/>
+                <Route path="./ClassLayout/MainLayout/MainLayout"/>
                 {/* Add other routes here as needed */}
             </Routes>
         </>

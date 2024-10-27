@@ -11,7 +11,7 @@ function ClassList() {
             <Class
               text='Test Class 1'
               professor='Professor Brown'
-              path='/services'
+              path='./ClassLayout/MainLayout/MainLayout'
             />
             <Class
               text='Test Class 2'
