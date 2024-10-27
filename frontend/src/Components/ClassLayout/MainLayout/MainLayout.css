@@ -1,13 +1,30 @@
-.container{
-    width: 80;
-    height: 80;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  .main-layout {
     display: flex;
-}
-
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
-    color: black;
-}
+    width: 100vw;
+    flex-direction: row;
+  }
+  
+  /*.chat-list {
+    width: 25%;
+    max-width: 300px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    overflow-y: auto;
+  }*/
+  
+  .discussion-forum {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
