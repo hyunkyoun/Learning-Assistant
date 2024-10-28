@@ -1,3 +1,5 @@
+/* Login.css */
+
 /* CSS Reset */
 * {
     margin: 0;
@@ -9,24 +11,16 @@ html, body {
     height: 100%;
 }
 
-body {
+.login_body {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;         /* Center vertically */
+    justify-content: center;     /* Center horizontally */
+    height: 100vh;              /* Full viewport height */
     font-family: Arial, sans-serif;
-    background-color: white; /* Set full background to white */
+    background-color: white;     /* Set full background to white */
 }
 
-/* Center the wrapper div vertically and horizontally */
-.wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; /* Full viewport height */
-    background-color: white; /* Ensures entire background remains white */
-}
-
-.container {
+.login_container { /* Scoped styles */
     display: flex;
     flex-direction: column;
     width: 600px;
@@ -90,10 +84,17 @@ body {
     font-size: 19px;
 }
 
+/* Styling for error messages */
+.error-message {
+    color: red;
+}
+
 /* Styling for forgot-password */
 .forgot-password {
     color: lightgray;
     font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     text-align: left;
 }
 

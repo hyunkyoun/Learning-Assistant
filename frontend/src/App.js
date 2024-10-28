@@ -8,13 +8,11 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/Quiz" element={<Quiz />} />
         <Route path="/Home" element={<Home />} />
       </Routes>
-    </Router>
   );
 }
 
